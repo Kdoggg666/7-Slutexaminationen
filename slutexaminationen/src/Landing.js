@@ -1,6 +1,7 @@
 import React from 'react';
 import imageLeft from './/assets/graphics/intro-graphic-left.svg';
 import imageRight from './/assets/graphics/intro-graphic-right.svg';
+import landingImage from './/assets/graphics/airbean-landing.svg';
 import Button from 'react-bootstrap/Button';
 
 
@@ -13,6 +14,9 @@ function Landing() {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
+                <div className="center">
+                <img src={landingImage} alt="airbean" />
+            </div>
                 <div >
                 </div>
             </div>
@@ -23,6 +27,7 @@ function Landing() {
             }}>
 
             </div>
+            
         </div>
 
     )
