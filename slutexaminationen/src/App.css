@@ -1,6 +1,10 @@
+body {
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
-  background: #38846D;
+  
   ;
   
 }
@@ -61,4 +65,33 @@
   z-index: 100;
   text-align: center;
   align-items: center;
+}
+
+.landing {
+  background: #38846D;
+}
+
+.menu {
+  background: #F3E4E1;
+}
+
+
+.head-section-menu {
+  height: 10vh;
+  width: 100%;
+}
+
+.menu-items-section {
+  height: 100vh;
+  background: #F3E4E1;
+  color: #2F2926;
+  font-family: serif;
+  align-items: center;
+  
+}
+
+.menu-items-section h1 {
+  margin-top: 50px;
+  font-size: 42px;
+  font-weight: 700;
 }
