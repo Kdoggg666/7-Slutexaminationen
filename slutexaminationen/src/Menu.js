@@ -1,7 +1,9 @@
 import React from 'react';
 import headImage from './/assets/graphics/graphics-header.svg';
 
+
 function Menu() {
+
     return (
         <div>
         <div className="row menu">
@@ -16,7 +18,7 @@ function Menu() {
         </div>
         <div className="row menu-row">
             <div className="col menu-items-section">
-                <h1>Menu</h1>
+                <h1>Meny</h1>
                 
             </div>
         </div>
