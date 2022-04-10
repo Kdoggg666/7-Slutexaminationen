@@ -1,56 +1,24 @@
-import React from "react";
-import headImage from ".//assets/graphics/graphics-header.svg";
-import Axios from "axios";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import MenuItems from "./MenuItems";
 
-function Menu() {
-  
-  let menuItems = fetch("http://localhost:5000/api/beans").then((response) => response.json())
-  .then((data) => {
-    return data;
-  });
+export default function Menu() {
+  const [beans, setBeans] = useState('');
 
-  const coffeeItems = async () => {
-    const a = await menuItems;
-    console.log(a);
-    return a;
-  };
+  const getMenuData = () => {
+    axios.get('http://localhost:5000/api/beans')
+    .then(result => {
+      const menuData = result.data.menu
+      setBeans(menuData)
+    })
+    .catch(error => console.error(`Error: ${error}`))
+  }
 
+  useEffect(() => {
+    getMenuData();
+  }, []);
 
-
-      
-         
-    
-   
-  const [beans, setBeans] = useState([coffeeItems()]);
-
-  
-
-  return (
-    <div>
-      <div className="row menu">
-        <div
-          className="col head-section-menu"
-          style={{
-            backgroundImage: `url(${headImage})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-      </div>
-      <div className="row menu-row">
-        <div className="col menu-items-section">
-          <h1>Meny</h1>
-          <ul>
-            {beans.map((item) => (
-              <li key={item} >{item.title}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
+  return(
+    <MenuItems beans={beans} />
+  )
 }
-
-export default Menu;
