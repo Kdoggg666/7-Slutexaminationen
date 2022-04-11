@@ -8,19 +8,25 @@ export default function MenuItems(props) {
     if (beans.length > 0) {
       return beans.map((item, index) => {
         return (
-          <div className="row">
-            <div className="col-1">
-              <div className="plus-icon">
-                <img className="plus-image" src={plusImage} alt="" />
+          <div>
+            <div className="row">
+              <div className="col-1">
+                <div className="plus-icon">
+                  <img className="plus-image" src={plusImage} alt="" />
+                </div>
+              </div>
+              <div className="col menu-item-name">
+                <h5>{item.title}</h5>
+              </div>
+              <div className="col trailing-line"></div>
+              <div className="col price">
+                <h5>{item.price} kr</h5>
               </div>
             </div>
-            <div className="col menu-item-name">
-              <h5>{item.title}</h5>
-              <p>{item.desc}</p>
-            </div>
-            <div className="col trailing-line"></div>
-            <div className="col price">
-              <h5>{item.price} kr</h5>
+            <div className="row ">
+              <div className="col p-text">
+                <p>{item.desc}</p>
+              </div>
             </div>
           </div>
         );
